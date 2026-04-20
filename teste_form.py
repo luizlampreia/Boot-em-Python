@@ -107,11 +107,11 @@ for idx, usuario in enumerate(usuarios, start=1):
         time.sleep(1)
 
         # Confirmação
-        print(f"✅ Usuário {idx} enviado: {usuario['nome']} - {usuario['telefone']}")
+        print(f" Usuário {idx} enviado: {usuario['nome']} - {usuario['telefone']}")
         relatorio_envios.append({'usuario': usuario, 'enviado': True})
 
     except Exception as e:
-        print(f"❌ Erro ao enviar usuário {idx}: {e}")
+        print(f"Erro ao enviar usuário {idx}: {e}")
         relatorio_envios.append({'usuario': usuario, 'enviado': False, 'erro': str(e)})
 
 # Salva relatório em JSON
@@ -119,7 +119,7 @@ with open("relatorio_envios.json", "w", encoding="utf-8") as f:
     json.dump(relatorio_envios, f, ensure_ascii=False, indent=4)
 
 driver.quit()
-print("📄 Relatório salvo em 'relatorio_envios.json'")
+print("Relatório salvo em 'relatorio_envios.json'")
 
 
 
