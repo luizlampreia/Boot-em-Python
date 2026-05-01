@@ -10,14 +10,14 @@ from faker import Faker
 # Inicializa o Faker
 faker = Faker('pt_BR')
 
-# Função para gerar telefone no formato (99) 9 9999-9999
+# Função para gerar telefone no formato (99) 9 9999-9999 para preenchimento automático no site.
 def gerar_telefone():
     ddd = random.randint(11, 99)
     primeiro = random.randint(9000, 9999)
     segundo = random.randint(1000, 9999)
     return f"({ddd}) 9 {primeiro}-{segundo}"
 
-# Função para gerar 10 usuários aleatórios
+# Função para gerar 10 usuários aleatórios com escolhas diferentes.
 def gerar_usuarios(qtd=10):
     usuarios = []
     qtd_bones_options = ["-30", "+30", "+50", "+100", "+300", "+1000", "+3000", "+10000"]
@@ -47,7 +47,7 @@ def gerar_usuarios(qtd=10):
 # Lista de usuários aleatórios
 usuarios = gerar_usuarios(10)
 
-# Inicializa o driver
+# Inicializa o driver e abre o chrome
 driver = webdriver.Chrome()
 driver.maximize_window()
 wait = WebDriverWait(driver, 10)
