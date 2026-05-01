@@ -56,7 +56,7 @@ wait = WebDriverWait(driver, 10)
 relatorio_envios = []
 
 for idx, usuario in enumerate(usuarios, start=1):
-    driver.get("https://seubone.com/")  # URL do formulário
+    driver.get("https://seubone.com/")  # URL do site escolhido, pode ser qualquer site, desde que o boot esteja configurado!!!
     time.sleep(2)
     
     try:
